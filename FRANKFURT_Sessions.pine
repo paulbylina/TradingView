@@ -19,14 +19,14 @@ firstSessionColor = input.color(color.new(color.yellow, 90), "Session color", gr
 const string SECOND_SESSION_GROUP = "Frankfurt"
 showSecond         = input.bool(true, "Show session", group = SECOND_SESSION_GROUP, display = display.none)
 secondSessionName  = input.string("Frankfurt", "Displayed name", group = SECOND_SESSION_GROUP, display = display.none, active = showSecond)
-secondSessionTime  = input.session("0900-1530", "Session time", group = SECOND_SESSION_GROUP, display = display.none, active = showSecond)
+secondSessionTime  = input.session("0900-1730", "Session time", group = SECOND_SESSION_GROUP, display = display.none, active = showSecond)
 secondSessionTZ    = input.string("Europe/Berlin", "Session timezone", group = SECOND_SESSION_GROUP, display = display.none, tooltip = TZ_TOOLTIP_TEXT, active = showSecond)
 secondSessionColor = input.color(color.new(color.blue, 90), "Session color", group = SECOND_SESSION_GROUP, active = showSecond)
 
 const string THIRD_SESSION_GROUP = "After hours"
 showThird        = input.bool(true, "Show session", group = THIRD_SESSION_GROUP, display = display.none)
 thirdSessionName  = input.string("After hours", "Displayed name", group = THIRD_SESSION_GROUP, display = display.none, active = showThird)
-thirdSessionTime  = input.session("1530-2200", "Session time", group = THIRD_SESSION_GROUP, display = display.none, active = showThird)
+thirdSessionTime  = input.session("1730-2200", "Session time", group = THIRD_SESSION_GROUP, display = display.none, active = showThird)
 thirdSessionTZ    = input.string("Europe/Berlin", "Session timezone", group = THIRD_SESSION_GROUP, display = display.none, tooltip = TZ_TOOLTIP_TEXT, active = showThird)
 thirdSessionColor = input.color(color.new(color.green, 90), "Session color", group = THIRD_SESSION_GROUP, active = showThird)
 
