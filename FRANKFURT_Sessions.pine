@@ -105,14 +105,19 @@ method updateSessionDisplay(SessionInfo this) =>
     sessionDisp
 
 method update(SessionInfo this) =>
-	bool isChange = timeframe.change("1D")
-    if (not na(time("", this.session, this.timezone))) // inSession
-        if na(this.active) or isChange
+    // Are we inside the session?
+    bool inSession = not na(time("", this.session, this.timezone))
+
+    if inSession
+        // Start a new box only when we *enter* the session
+        if na(this.active)
             this.createSessionDisplay()
-        else 
+        else
             this.updateSessionDisplay()
     else if not na(this.active)
+        // We left the session, clear active state
         this.active := na
+
 
 getSessionInfos()=>
     array<SessionInfo> sessionInfos = array.new<SessionInfo>()
